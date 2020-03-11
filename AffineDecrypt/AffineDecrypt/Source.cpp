@@ -1,6 +1,6 @@
 #include "resources.h"
 
-void encrypt(char s1, char s2, char d1, char d2, int& a, int& b) {
+void decrypt(char s1, char s2, char d1, char d2, int& a, int& b) {
 	int inv = invers(da_cod(s2) - da_cod(s1), N);
 	if (inv <= 0)
 		return;
@@ -19,7 +19,7 @@ void main() {
 	char c;
 
 	char c1 = ' ', c2 = 'a', r1 = '.', r2 = 'T';
-	encrypt(c1, c2, r1, r2, a, b);
+	decrypt(c1, c2, r1, r2, a, b);
 	a = invers(a, N);
 	b = modulo((-a) * b, N);
 
